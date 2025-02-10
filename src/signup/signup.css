@@ -1,0 +1,78 @@
+.signup-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    perspective: 1000px; /* Add perspective for 3D effect */
+  }
+  
+  .signup-container {
+    width: 400px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform-style: preserve-3d; /* Preserve 3D space */
+    transition: transform 0.5s; /* Add transition for smooth effect */
+  }
+  
+  .signup-container:hover {
+    transform: rotateY(10deg) rotateX(10deg); /* Rotate on hover for 3D effect */
+  }
+  
+  .signup-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .easynote {
+    color: #007bff;
+  }
+  
+  .signup-input-group {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  .signup-input-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .signup-input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .signup-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .signup-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .signup-error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  .signup-link {
+    margin-top: 20px;
+  }
