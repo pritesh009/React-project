@@ -1,7 +1,5 @@
-// App.tsx
-
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/authContext';
 import Home from './home/home';
 import Login from './signin/signin';
@@ -12,8 +10,15 @@ import { NotebookProvider } from './context/notebookContext';
 
 const AppContent: React.FC = () => {
   const { currentUser } = useAuth();
+  const navigate = useNavigate();
 
-  return currentUser ? <Home /> : <Signup />;
+  useEffect(() => {
+    if (!currentUser) {
+      navigate('/signup');
+    }
+  }, [currentUser, navigate]);
+
+  return currentUser ? <Home /> : null;
 };
 
 const App: React.FC = () => {
