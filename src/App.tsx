@@ -14,7 +14,7 @@ const AppContent: React.FC = () => {
 
   useEffect(() => {
     if (!currentUser) {
-      navigate('/signup');
+      navigate('/login'); // Redirect to login page if not authenticated
     }
   }, [currentUser, navigate]);
 
