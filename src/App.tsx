@@ -7,6 +7,7 @@ import Signup from './signup/signup';
 import './App.css';
 import Notebook from './notebook/notebook';
 import { NotebookProvider } from './context/notebookContext';
+import Navbar from './Navbar/Navbar'; // Correct the import path
 
 const AppContent: React.FC = () => {
   const { currentUser } = useAuth();
@@ -18,7 +19,12 @@ const AppContent: React.FC = () => {
     }
   }, [currentUser, navigate]);
 
-  return currentUser ? <Home /> : null;
+  return currentUser ? (
+    <>
+      <Navbar />
+      <Home />
+    </>
+  ) : null;
 };
 
 const App: React.FC = () => {
